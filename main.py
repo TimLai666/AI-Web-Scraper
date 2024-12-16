@@ -5,6 +5,7 @@ from scrape import (
     clean_body_content,
     split_dom_content
 )
+from parse import parse_with_ollama
 
 st.title("AI Web Scraper")
 url: str = st.text_input("輸入網址")
@@ -27,3 +28,5 @@ if "dom_content" in st.session_state:
         st.write("正在生成您指定的內容...")
         
         dom_chunks: list[str] = split_dom_content(st.session_state.dom_content)
+        parsed_results: str = parse_with_ollama(dom_chunks, description)
+        st.write(parsed_results)
