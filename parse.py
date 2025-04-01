@@ -1,7 +1,7 @@
 from langchain_ollama import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 
-model = OllamaLLM(model="llama3.2:3b", base_url="http://192.168.1.101:11434")
+model = OllamaLLM(model="Gemma3:12b", base_url="http://192.168.1.164:11434")
 
 template = (
     "You are tasked with extracting specific information from the following text content: {dom_content}. "
